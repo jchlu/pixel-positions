@@ -19,4 +19,8 @@ class Job extends Model
     {
         # code...
     }
+    public function tags()
+    {
+        return [];
+    }
 }
