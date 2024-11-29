@@ -14,3 +14,9 @@ it('belongs to the correct employer', function () {
     expect($job->employer->is($employer))->toBeTrue();
     // expect(true)->toBeTrue();
 });
+
+it('can have tags', function () {
+    $job = Job::factory()->create();
+    $job->tag('api');
+    expect($job->tags)->toHaveCount(1);
+});
