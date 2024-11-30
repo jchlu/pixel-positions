@@ -1,7 +1,7 @@
 @props(['job'])
 <x-card class="flex-col">
 
-  <div class="self-start text-sm">Laracasts</div>
+  <div class="self-start text-sm">{{ $job->employer->name }}</div>
 
   <div class="py-8">
     <h3 class="text-lg font-bold transition-colors duration-300 group-hover:text-blue-600">{{ $job->title }}</h3>
