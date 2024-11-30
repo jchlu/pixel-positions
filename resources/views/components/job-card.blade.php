@@ -1,3 +1,4 @@
+@props(['job'])
 <x-card class="flex-col">
 
   <div class="self-start text-sm">Laracasts</div>
@@ -9,9 +10,9 @@
 
   <div class="mt-auto flex items-center justify-between">
     <div>
-      <x-tag size='small'>Tag</x-tag>
-      <x-tag size='small'>Tag</x-tag>
-      <x-tag size='small'>Tag</x-tag>
+      @foreach ($job->tags as $tag)
+        <x-tag :$tag size='small' />
+      @endforeach
     </div>
     <x-employer-logo :width='42' />
   </div>
