@@ -3,11 +3,10 @@
 
   <div class="space-y-10">
     <section class="pt-6 text-center">
-      <h1 class="text-4xl font-bold">Let's Find Your Next Job</h1>
-      <form class="mt-6" action="">
-        <input placeholder="Web Developer..."
-          class="border-white/15 w-full max-w-xl rounded-xl border bg-white/5 px-5 py-4" type="text" />
-      </form>
+      <x-forms.form action="/search">
+        <x-page-heading>Let's Find Your Next Job</x-page-heading>
+        <x-forms.input name="q" :label='false' class="mt-6" placeholder="Web Developer..." />
+      </x-forms.form>
     </section>
     <section class="pt-10">
       <x-section-heading>Featured Jobs</x-section-heading>

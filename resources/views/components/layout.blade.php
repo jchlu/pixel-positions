@@ -11,7 +11,7 @@
     rel="stylesheet">
 </head>
 
-<body class="h-full bg-black text-white">
+<body class="h-full bg-black pb-20 text-white">
   <div class="px-10">
     <nav class="flex items-center justify-between border-b border-white/25 py-4">
       <div>
@@ -23,7 +23,7 @@
         <x-nav-a href="/">Jobs</x-nav-a>
         <x-nav-a>Careers</x-nav-a>
         <x-nav-a>Salaries</x-nav-a>
-        <x-nav-a>Companies</x-nav-a>
+        <x-nav-a href="/employers">Companies</x-nav-a>
       </div>
       <div class="flex items-center space-x-2">
         @auth
@@ -44,7 +44,7 @@
         <x-nav-a>Post a Job</x-nav-a>
       </div>
     </nav>
-    <main class="mx-auto mt-2 max-w-[986px]">
+    <main class="mx-auto mt-10 max-w-[986px]">
       {{ $slot }}
     </main>
   </div>
