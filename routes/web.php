@@ -5,11 +5,13 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [JobController::class, 'index']);
 Route::get('/employers', [EmployerController::class, 'index']);
 Route::get('/search', SearchController::class); // invokable Controller example using __invoke()
+Route::get('/tags/{tag:name}', TagController::class); // invokable Controller example using __invoke()
 
 /* Guest Only Routes */
 Route::middleware('guest')->group(function () {
@@ -19,4 +21,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
-Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::get('/jobs/create', [JobController::class, 'create']);
+    Route::post('jobs', [JobController::class, 'store']);
+    Route::delete('/logout', [SessionController::class, 'destroy']);
+});

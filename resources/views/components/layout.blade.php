@@ -15,7 +15,7 @@
   <div class="px-10">
     <nav class="flex items-center justify-between border-b border-white/25 py-4">
       <div>
-        <a href="">
+        <a href="/">
           <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
         </a>
       </div>
@@ -35,13 +35,11 @@
               class="rounded-xl border border-transparent px-2 py-1 transition-colors duration-300 hover:border-indigo-400 hover:text-indigo-400">Log
               Out</button>
           </form>
+          <x-nav-a href="/jobs/create">Post a Job</x-nav-a>
         @endauth
         @guest
-
           <x-nav-a href="/login">Login</x-nav-a>
-          <!-- <x-nav-a href="/logout" method="POST">Logout</x-nav-a> -->
         @endguest
-        <x-nav-a>Post a Job</x-nav-a>
       </div>
     </nav>
     <main class="mx-auto mt-10 max-w-[986px]">
