@@ -14,7 +14,7 @@
         <x-tag :$tag size='small' />
       @endforeach
     </div>
-    <x-employer-logo :width='42' />
+    <x-employer-logo :width='42' logo='{{ $job->employer->logo }}' />
   </div>
 
 </x-card>

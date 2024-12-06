@@ -2,7 +2,7 @@
 <x-card class="gap-x-6">
 
   <div>
-    <x-employer-logo />
+    <x-employer-logo logo='{{ $job->employer->logo }}' />
   </div>
 
   <div class="flex flex-1 flex-col">
